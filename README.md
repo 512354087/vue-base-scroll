@@ -1,18 +1,68 @@
 # vue-base-scroll
 
-> A Vue.js project
+> 一款vue的列表循环滚动组件
 
-## Build Setup
+## Install
 
 ``` bash
 # install dependencies
-npm install
+npm i vue-base-scrol --save
+```
+## Usage
 
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
+* 第一种用法 
+    > vue 入口文件 main.js 
+``` js
+   //全局组件
+   import VueBaseScroll from 'vue-base-scroll';
+   Vue.use(VueBaseScroll);  
 ```
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+* 第二种用法
+    > vue页面 
+``` js
+   import VueBaseScroll from 'vue-base-scroll';
+   //...
+   components:{
+       VueBaseScroll
+   } 
+   //...
+```
+
+ * Example
+``` html
+    <vue-base-scroll :list="plant_area_list" height="598px" >
+        <li slot="item" slot-scope="{ item }" class="plants-item  flex">
+            <span style="overflow: hidden;text-overflow:ellipsis;white-space: nowrap;">{{item.name}}</span>
+            <span class="color-light_blue">{{item.area}}亩</span>
+        </li>
+    </vue-base-scroll>   
+```
+
+## API
+``` js
+    props: {
+      list: {
+        type: Array,
+        required: true
+      },
+      /**
+       * @augments 滚动容器的高度
+       */
+      height: {
+        type: String,
+        default:'400px'
+      },
+      /**
+       * @augments 每次滚动的距离
+       */
+      moveDistance: {
+        type: String,
+        defalut:'-40px'
+      }
+    },
+```
+
+## gitHub
+ [Github](https://github.com/512354087/vue-base-scroll)
+
