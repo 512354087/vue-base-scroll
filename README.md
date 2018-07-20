@@ -6,7 +6,7 @@
 
 ``` bash
 # install dependencies
-npm i vue-base-scrol --save
+npm i vue-base-scroll --save
 ```
 ## Usage
 
@@ -33,8 +33,8 @@ npm i vue-base-scrol --save
 ``` html
     <vue-base-scroll :list="plant_area_list" height="598px" >
         <li slot="item" slot-scope="{ item }" class="plants-item  flex">
-            <span style="overflow: hidden;text-overflow:ellipsis;white-space: nowrap;">{{item.name}}</span>
-            <span class="color-light_blue">{{item.area}}亩</span>
+            <span style="overflow: hidden;text-overflow:ellipsis;white-space: nowrap;">{{item.id}}</span>
+            <span class="color-light_blue">{{item.name}}</span>
         </li>
     </vue-base-scroll>   
 ```
